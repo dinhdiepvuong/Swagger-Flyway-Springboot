@@ -1,0 +1,29 @@
+spring:
+  #JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  #Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://rain.db.elephantsql.com:5432/nquhohai
+    username: nquhohai
+    password: EU3IKic1lxOKYMbUJzigSEYhPRIRewzG
+    hikari:
+      exception-override-class-name:
+  #Flyway
+  #Path into folder script Flayway
+  flyway:
+    locations: classpath:/db/migration,classpath:/dev/db/migration
+    baseline-on-migrate: true
+    baseline-version: 0
+#swagger-ui customer path
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /api-docs
+  show-actuator: true
